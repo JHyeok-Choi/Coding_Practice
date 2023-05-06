@@ -1,17 +1,10 @@
 def solution(today, terms, privacies):
-    answer = []
-    terms_d = {}
-    Y, M, D = map(int, today.split('.'))
-    total_t = Y*336 + M * 28 + D
-    for term in terms:
-        cate_t, month = term.split()
-        terms_d[cate_t] = int(month) * 28
+    def to_days(date):
+        Y, M, D = map(int, date.split("."))
+        return Y * 336 + M * 28 + D
     
-    for i, j in enumerate(privacies):
-        date, cate_p = j.split()
-        y, m, d = map(int, date.split('.'))
-        total_p = y * 336 + m * 28 + d + terms_d[cate_p]
-        if total_t >= total_p:
-            answer.append(i+1)
+    terms_d = {i[0]: int(i[2:]) * 28 for i in terms}
+    
+    answer = [i+1 for i, privacy in enumerate(privacies) if to_days(today) >= (to_days(privacy[:-2]) + terms_d[privacy[-1]])]
             
     return answer
