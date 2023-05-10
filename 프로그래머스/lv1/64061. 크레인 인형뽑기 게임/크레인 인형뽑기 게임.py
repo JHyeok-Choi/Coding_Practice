@@ -6,17 +6,12 @@ def solution(board, moves):
             if board[j][i-1] != 0:
                 basket.append(board[j][i-1])
                 board[j][i-1] = 0
-                break
                 
-    num = 1
-    while num < len(basket):
-        if basket[num] == basket[num-1]:
-            basket.pop(num-1)
-            basket.pop(num-1)
-            if num != 1:
-                num -= 1
-            answer += 2
-        else:
-            num += 1
+                if len(basket) > 1:
+                    if basket[-1] == basket[-2]:
+                        basket.pop(-1)
+                        basket.pop(-1)
+                        answer += 2
+                break
             
     return answer
