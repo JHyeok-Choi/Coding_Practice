@@ -2,9 +2,9 @@ import sys
 inp = sys.stdin.readline
 
 N, M = map(int, inp().split())
-memo = {}
+memo = dict()
 
-for i in range(N):
+for _ in range(N):
     address, password = inp().split()
     memo[address] = password
 
