@@ -8,5 +8,4 @@ for i in range(N):
     address, password = map(str, inp().split())
     memo[address] = password
 
-for i in range(M):
-    sys.stdout.write(memo[inp().rstrip()] + "\n")
+sys.stdout.write("\n".join([memo[inp().rstrip()] for _ in range(M)]))
