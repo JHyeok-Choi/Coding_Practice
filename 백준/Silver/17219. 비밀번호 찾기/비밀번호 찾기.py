@@ -9,4 +9,4 @@ for i in range(N):
     memo[address] = password
 
 for i in range(M):
-    print(memo[inp().rstrip()])
+    sys.stdout.write(memo[inp().rstrip()] + "\n")
