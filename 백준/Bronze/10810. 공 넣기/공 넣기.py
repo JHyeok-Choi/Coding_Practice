@@ -1,0 +1,13 @@
+import sys
+inp = sys.stdin.readline
+
+N, M = map(int, inp().split())
+basket = [0]*(N+1)
+
+
+for _ in range(M):
+    i, j, k = map(int, inp().split())
+    for n in range(i, j+1):
+        basket[n] = k
+
+print(*basket[1:])
