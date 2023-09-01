@@ -1,0 +1,5 @@
+password = list(map(int, input().split()))
+if 9 in password:
+    print("F")
+else:
+    print("S")
