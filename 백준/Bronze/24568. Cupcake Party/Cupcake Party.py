@@ -1,3 +1,4 @@
-R = int(input()) * 8
-S = int(input()) * 3
-print(R + S - 28)
+x = input
+y = int(x()) * 8
+y += int(x()) * 3
+print(y - 28)
