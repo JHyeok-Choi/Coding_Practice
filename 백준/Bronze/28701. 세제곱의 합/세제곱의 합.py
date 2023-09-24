@@ -1,0 +1,5 @@
+N = int(input())
+f = sum([i for i in range(1, N + 1)])
+print(f)
+print(f ** 2)
+print(sum([j ** 3 for j in range(1, N + 1)]))
