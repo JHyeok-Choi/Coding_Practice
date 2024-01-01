@@ -1,11 +1,10 @@
 def solution(n):
     nb = format(n, 'b')
-    answer = n
     
     while True:
-        answer += 1
-        ab = format(answer, 'b')
+        n += 1
+        ab = format(n, 'b')
         if nb.count('1') == ab.count('1'):
             break
     
-    return answer
+    return n
