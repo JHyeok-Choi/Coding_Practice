@@ -8,11 +8,11 @@ def solution(brown, yellow):
     hPoR = (brown + 4) // 2
     wh = brown + yellow
         
-    for i in range(3, hPoR):
-        w = wh // i
+    for h in range(3, hPoR):
+        w = wh // h
         
-        if i * w == wh and (i - 2) * (w - 2) == yellow:
-            answer = [w, i]
+        if w * h == wh and (w - 2) * (h - 2) == yellow:
+            answer = [w, h]
             break
         
     return answer
