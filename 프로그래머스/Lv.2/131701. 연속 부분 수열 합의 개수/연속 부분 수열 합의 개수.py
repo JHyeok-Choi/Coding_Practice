@@ -1,13 +1,5 @@
-def solution(elements):
-    answer = 0
-    
+def solution(elements):    
     loop = 2 * elements
-    table = set()
+    table = set(sum(loop[i: i + j]) for j in range(len(elements)) for i in range(len(elements)))
     
-    for i in range(len(elements)):
-        for j in range(len(elements)):
-            table.add(sum(loop[i : i + j]))
-            
-    answer = len(table)
-    
-    return answer
+    return len(table)
