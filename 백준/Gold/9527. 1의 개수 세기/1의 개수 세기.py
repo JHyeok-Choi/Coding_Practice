@@ -1,22 +1,16 @@
-import sys
-from collections import deque
-input = sys.stdin.readline
+from math import log2
 
 def binary(num):
-    if num < 2:
-        return num
+    cnt = 0
     
-    dq = deque()
-    num_a = num
+    for i in range(int(log2(num)) + 1):
+        x = num % (2 ** (i + 1))
+        cnt += (num - x) // 2
+        if x > 2 ** i:
+            cnt += x - 2 ** i
     
-    while num_a > 0:
-        dq.append(num_a % 2)
-        num_a //= 2
-    
-    cnt = len(dq) - 1
-    
-    return 2 ** (cnt - 1) * cnt + 1 + (num - 2 ** cnt) + binary(num - 2 ** cnt)
+    return cnt
 
 A, B = map(int, input().split())
 
-print(binary(B) - binary(A - 1))
+print(binary(B + 1) - binary(A))
