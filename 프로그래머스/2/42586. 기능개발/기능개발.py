@@ -1,20 +1,19 @@
+from math import ceil
+
 def solution(progresses, speeds):
     answer = []
-    index = 0
-    while True :
-        for i in range(len(progresses)) :
-            progresses[i] += speeds[i]
+    days = [ceil((100 - p )/ s) for p, s in zip(progresses, speeds)]
+    count = 0
+    current = days[0]
+    
+    for i in range(len(progresses)):
+        if current < days[i]:
+            answer.append(count)
+            current = days[i]
+            count = 0
+        
+        count += 1
 
-        cnt = 0
-        for i in range(index, len(progresses)) :
-            if progresses[i] >= 100 :
-                cnt += 1
-            else :
-                break
-        if cnt > 0 :
-            answer.append(cnt)
-            index += cnt
-
-
-        if sum(answer) == len(progresses) :
-            return answer
+    answer.append(count)
+    
+    return answer
