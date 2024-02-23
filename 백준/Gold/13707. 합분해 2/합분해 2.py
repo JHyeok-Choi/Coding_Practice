@@ -1,9 +1,11 @@
+import sys
+sys.setrecursionlimit(10 ** 6)
 N, K = map(int, input().split())
-dp = [[0] * (K + 1) for _ in range(N + 1)]
-dp[0][0] = 1
 
-for i in range(N + 1):
-    for j in range(1, K + 1):
-        dp[i][j] = (dp[i - 1][j] + dp[i][j - 1]) % 10 ** 9
+def factorial(n):
+    return n * factorial(n - 1) if n > 1 else 1
 
-print(dp[N][K])
+def combination(n, r):
+    return factorial(n) // (factorial(r) * factorial(n - r))
+
+print(combination(N + K - 1, N) % 10 ** 9)
