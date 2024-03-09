@@ -6,10 +6,9 @@ def solution(babbling):
         length = 0
         
         for j in words:
-            if i.find(j) != -1:
-                length += len(j)
+            i = i.replace(j, " ", 1)
         
-        if len(i) == length:
+        if i.strip() == "":
             answer += 1
 
     return answer
