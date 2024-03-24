@@ -1,17 +1,11 @@
 def solution(code):
     answer = ''
     mode = 0
-    for i in range(len(code)):
-        if code[i] == "1":
-            if mode == 0:
-                mode = 1
-            else:
-                mode = 0
+    for i, j in enumerate(code):
+        if j == "1":
+            mode = 0 if mode else 1
         else:
-            if mode == 0:
-                if i % 2 == 0:
-                    answer += code[i]
-            else:
-                if i % 2 == 1:
-                    answer += code[i]
+            if i % 2 == mode:
+                    answer += j
+    
     return answer if answer else "EMPTY"
