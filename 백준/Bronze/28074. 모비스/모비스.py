@@ -1,0 +1,1 @@
+print("YES" if sum([1 if i in "MOBIS" else 0 for i in set(input())]) == 5 else "NO")
