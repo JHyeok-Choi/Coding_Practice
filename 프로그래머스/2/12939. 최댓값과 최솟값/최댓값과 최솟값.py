@@ -1,5 +1,2 @@
-def solution(s):
-    answer = ''
-    s = sorted(map(int, s.split()))
-    
-    return f"{s[0]} {s[-1]}"
+def solution(s):    
+    return (lambda x: f"{x[0]} {x[-1]}")(sorted(map(int, s.split())))
