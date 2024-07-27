@@ -1,8 +1,7 @@
 def solution(s):
-    answer = [0, 0]
+    x,y = 0, 0
     
     while s != "1":
-        answer = list(map(sum, zip(answer, [1, s.count("0")])))
-        s = bin(len(s.replace("0", "")))[2:]
+        x, y, s = x + 1, y + s.count('0'), bin(s.count('1'))[2:]
     
-    return answer
+    return [x, y]
