@@ -1,21 +1,17 @@
 def solution(bandage, health, attacks):
     casting = 0
     maxhp = health
+    time = attacks[0][0]
     
-    for t in range(1, attacks[-1][0] + 1):
-        if t == attacks[0][0]:
-            health -= attacks.pop(0)[1]
-            if health <= 0:
-                return -1
-            casting = 0
-        elif health < maxhp:
-            casting += 1
-            if health < maxhp:
-                health += bandage[1]
-            if casting == bandage[0]:
-                health += bandage[2]
-                casting = 0
-            if health > maxhp:
-                health = maxhp
+    for att, atk in attacks:
+        health += ((att - time) // bandage[0]) * bandage[2] + (att - time) * bandage[1]
+        time = att + 1
         
+        if health > maxhp:
+            health = maxhp
+        
+        health -= atk
+        if health <= 0:
+            return -1
+            
     return health
