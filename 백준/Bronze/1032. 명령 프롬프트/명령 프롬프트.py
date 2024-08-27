@@ -1,10 +1,11 @@
+answer = ''
 N = int(input())
-answer = list(input())
+filenames = [input() for i in range(N)]
 
-for i in range(N - 1):
-    tmp = input()
-    for j, k in enumerate(tmp):
-        if answer[j] != k:
-            answer[j] = '?'
+for j in (set(map(lambda x:x[i], filenames)) for i in range(len(filenames[0]))):
+    if len(j) <= 1:
+        answer += list(j)[0]
+    else:
+        answer += '?'
 
-print(''.join(answer))
+print(answer)
