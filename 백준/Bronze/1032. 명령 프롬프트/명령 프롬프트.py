@@ -1,10 +1,8 @@
 N = int(input())
-answer = []
+answer = list(input())
 
-for i in range(N):
+for i in range(N - 1):
     tmp = input()
-    if i == 0:
-        answer = list(tmp)
     for j, k in enumerate(tmp):
         if answer[j] != k:
             answer[j] = '?'
