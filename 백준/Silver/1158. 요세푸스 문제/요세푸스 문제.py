@@ -1,12 +1,12 @@
 N, K = map(int, input().split())
 table = [i for i in range(1, N + 1)]
-answer = '<'
+answer = "<"
 tmp = 0
 
 for j in range(N):
     tmp += K - 1
     if tmp >= len(table):
         tmp = tmp % len(table)
-    answer += str(table.pop(tmp)) + ', '
+    answer += f"{table.pop(tmp)}, "
 
-print(answer[:-2] + '>')
+print(answer[:-2] + ">")
