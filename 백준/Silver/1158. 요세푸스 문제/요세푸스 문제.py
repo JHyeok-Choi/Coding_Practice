@@ -3,7 +3,7 @@ table = [i for i in range(1, N + 1)]
 answer = "<"
 tmp = 0
 
-for j in range(N):
+for _ in range(N):
     tmp += K - 1
     if tmp >= len(table):
         tmp = tmp % len(table)
