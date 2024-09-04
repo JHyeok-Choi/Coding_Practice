@@ -10,8 +10,6 @@ for i in text:
         else:
             table[i] += 1
 
-table = dict(sorted(table.items()))
-
-for idx, cnt in table.items():
+for idx, cnt in dict(sorted(table.items())).items():
     if cnt == max(table.values()):
         print(idx, end='')
