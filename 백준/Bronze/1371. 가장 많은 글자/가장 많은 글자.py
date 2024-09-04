@@ -1,12 +1,17 @@
 import sys
 
 text = sys.stdin.read()
-table = [0] * 26
+table = dict()
 
 for i in text:
-    if i.isalpha():
-        table[ord(i) - 97] += 1
+    if i not in ['\n', ' ']:
+        if i not in table:
+            table[i] = 1
+        else:
+            table[i] += 1
 
-for idx, cnt in enumerate(table):
-    if cnt == max(table):
-        print(chr(97 + idx), end='')
+table = dict(sorted(table.items()))
+
+for idx, cnt in table.items():
+    if cnt == max(table.values()):
+        print(idx, end='')
