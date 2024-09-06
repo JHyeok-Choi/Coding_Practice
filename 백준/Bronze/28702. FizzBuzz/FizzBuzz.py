@@ -1,11 +1,4 @@
-a, b, c = input(), input(), input()
+import sys
 
-
-if a.isnumeric():
-    i = int(a) + 3
-elif b.isnumeric():
-    i = int(b) + 2
-else:
-    i = int(c) + 1
-
+i = [int(m) + (3 - n) for n, m in enumerate(sys.stdin.read().split()) if m.isnumeric()][0]
 print('FizzBuzz' if i % 15 == 0 else 'Fizz' if i % 3 == 0 else 'Buzz' if i % 5 == 0 else i)
