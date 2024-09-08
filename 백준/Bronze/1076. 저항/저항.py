@@ -1,10 +1,3 @@
-table = {'black': '0', 'brown': '1', 'red': '2', 'orange': '3', 'yellow': '4', 'green': '5', 'blue': '6', 'violet': '7', 'grey': '8', 'white': '9'}
-answer = ''
+table = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white']
 
-for i in range(3):
-    if i == 2:
-        answer += '0' * int(table[input()])
-    else:
-        answer += table[input()]
-
-print(int(answer))
+print(int(str(table.index(input())) + str(table.index(input())) + '0' * table.index(input())))
