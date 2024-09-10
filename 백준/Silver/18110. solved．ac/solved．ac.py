@@ -5,7 +5,7 @@ n = int(inp())
 
 # round == 오사오입
 def rnd(x):
-    if x - (x // 1) >= 0.5:
+    if x % 1 >= 0.5:
         return int(x) + 1
     else:
         return int(x)
