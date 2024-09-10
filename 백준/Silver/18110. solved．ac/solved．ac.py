@@ -1,7 +1,6 @@
 import sys
-inp = sys.stdin.readline
 
-n = int(inp())
+n = int(sys.stdin.readline())
 
 if n:
     table = sorted(map(int, sys.stdin.read().split()))
