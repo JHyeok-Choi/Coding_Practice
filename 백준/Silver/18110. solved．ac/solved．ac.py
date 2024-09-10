@@ -3,9 +3,9 @@ import sys
 inp = sys.stdin.readline
 n = int(inp())
 
-# round == 사사오입
+# round == 오사오입
 def rnd(x):
-    if x - int(x) >= 0.5:
+    if x - (x // 1) >= 0.5:
         return int(x) + 1
     else:
         return int(x)
