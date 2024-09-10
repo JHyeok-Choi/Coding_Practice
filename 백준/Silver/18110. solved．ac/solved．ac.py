@@ -1,7 +1,6 @@
 import sys
 
-inp = sys.stdin.readline
-n = int(inp())
+n = int(input())
 
 # round == 오사오입
 def rnd(x):
@@ -11,7 +10,7 @@ def rnd(x):
         return int(x)
 
 if n:
-    table = sorted([int(inp()) for _ in range(n)])
+    table = sorted(list(map(int, sys.stdin.read().split())))
     num = rnd(n * 0.15)
     print(rnd(sum(table[num: n - num]) / len(table[num: n - num])))
 else:
