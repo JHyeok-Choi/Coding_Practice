@@ -1,8 +1,5 @@
-import sys
-inp = sys.stdin.readline
-
-N, K = map(int, inp().split())
-table = list(map(int, inp().split()))
+N, K = map(int, input().split())
+table = list(map(int, input().split()))
 origin = sum(table[:K])
 tmp = origin
 
