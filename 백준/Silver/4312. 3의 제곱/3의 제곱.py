@@ -1,7 +1,7 @@
 import sys
 
 S = list(map(int, sys.stdin.read().split()))[:-1]
-s = s = [3 ** i for i in range(100)]
+s = s = [3 ** i for i in range(64)]
 
 for i in S:
     strS = bin(i - 1)[2:][::-1]
