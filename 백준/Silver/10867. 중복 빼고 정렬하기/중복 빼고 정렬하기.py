@@ -1,2 +1,3 @@
 _ = int(input())
-print(*sorted(list(set(map(int, input().split())))))
+table = sorted(list(set(map(int, input().split()))))
+print(*table)
